@@ -14,7 +14,7 @@
  * - Compares characters efficiently
  * - Displays the result
  *
- * This reduces extra memory usage.
+ * This reduces extra memory usage
  *
  * @author Inbasekaran S
  * @version 4.0
