@@ -36,6 +36,7 @@ mvn exec:java -Dexec.mainClass="PalindromeCheckerApp"
 - **Comments**: Write clear, concise comments explaining WHY, not WHAT
 
 ### Example:
+
 ```java
 /**
  * Validates if the input string is a valid palindrome candidate.
@@ -72,6 +73,7 @@ Use **Conventional Commits** format:
 - `chore:` Maintenance (e.g., `chore: update dependencies`)
 
 ### Examples:
+
 ```
 feat: implement recursive strategy for palindrome checking
 fix: correct off-by-one error in two-pointer algorithm
@@ -82,6 +84,7 @@ test: increase test coverage to 95%
 ## Creating a Pull Request
 
 1. **Push to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -93,17 +96,22 @@ test: increase test coverage to 95%
    - Screenshots/output if applicable
 
 3. **PR Template**:
+
    ```markdown
    ## Description
+
    [Brief description of your changes]
-   
+
    ## Motivation
+
    [Why is this change needed?]
-   
+
    ## Testing
+
    [How was this tested?]
-   
+
    ## Checklist
+
    - [ ] Tests added/updated
    - [ ] Documentation updated
    - [ ] All tests passing locally
@@ -113,9 +121,11 @@ test: increase test coverage to 95%
 ## Feature Request & Bug Reports
 
 ### Bug Report
+
 ```markdown
 **Description**: [Clear description of the issue]
-**Steps to Reproduce**: 
+**Steps to Reproduce**:
+
 1. [Step 1]
 2. [Step 2]
 
@@ -125,6 +135,7 @@ test: increase test coverage to 95%
 ```
 
 ### Feature Request
+
 ```markdown
 **Title**: [Clear, concise title]
 **Motivation**: [Why is this feature needed?]

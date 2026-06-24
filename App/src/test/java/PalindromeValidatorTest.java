@@ -1,8 +1,3 @@
-import util.PalindromeValidator;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit Tests for PalindromeValidator Utility Class
@@ -16,14 +11,14 @@ class PalindromeValidatorTest {
     @Test
     @DisplayName("Sanitize: removes spaces")
     void testSanitizeRemovesSpaces() {
-        assertEquals("amanaplanacanalpanama", 
+        assertEquals("amanaplanacanalpanama",
                      PalindromeValidator.sanitize("a man a plan a canal panama"));
     }
 
     @Test
     @DisplayName("Sanitize: removes punctuation")
     void testSanitizeRemovesPunctuation() {
-        assertEquals("amanaplanacanalpanama", 
+        assertEquals("amanaplanacanalpanama",
                      PalindromeValidator.sanitize("A man, a plan, a canal: Panama!"));
     }
 
@@ -36,7 +31,7 @@ class PalindromeValidatorTest {
     @Test
     @DisplayName("Sanitize: handles mixed case and punctuation")
     void testSanitizeHandlesMixed() {
-        assertEquals("racecar", 
+        assertEquals("racecar",
                      PalindromeValidator.sanitize("RaCe-Car!"));
     }
 

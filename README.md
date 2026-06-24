@@ -5,6 +5,7 @@
 ---
 
 ## 📋 Table of Contents
+
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies](#technologies)
@@ -25,6 +26,7 @@
 The **Palindrome Checker App** is a Java application that determines whether a given string is a palindrome using multiple algorithmic strategies. It demonstrates the **Strategy Design Pattern** to allow runtime algorithm selection and comparison.
 
 ### Key Highlights
+
 - ✅ **Multiple Algorithms**: Stack-based and Two-pointer implementations
 - ✅ **Input Sanitization**: Handles spaces, punctuation, and case variations
 - ✅ **Performance Benchmarking**: Real-time execution time comparison (nanoseconds)
@@ -36,34 +38,35 @@ The **Palindrome Checker App** is a Java application that determines whether a g
 
 ## 🎯 Features
 
-| Feature | Description |
-|---------|-------------|
-| **Algorithm Comparison** | Compare Stack vs Two-Pointer strategies in real-time |
-| **Input Preprocessing** | Automatically removes spaces, punctuation, and normalizes case |
-| **Performance Metrics** | Measures execution time in nanoseconds for each algorithm |
-| **Error Handling** | Validates input with clear, actionable error messages |
-| **Extensible Design** | Easy to add new palindrome validation strategies |
+| Feature                   | Description                                                           |
+| ------------------------- | --------------------------------------------------------------------- |
+| **Algorithm Comparison**  | Compare Stack vs Two-Pointer strategies in real-time                  |
+| **Input Preprocessing**   | Automatically removes spaces, punctuation, and normalizes case        |
+| **Performance Metrics**   | Measures execution time in nanoseconds for each algorithm             |
+| **Error Handling**        | Validates input with clear, actionable error messages                 |
+| **Extensible Design**     | Easy to add new palindrome validation strategies                      |
 | **Comprehensive Logging** | Detailed output showing input, sanitization, results, and performance |
-| **100% Test Coverage** | Unit tests for all core functionality (JUnit 5 + Mockito) |
-| **CI/CD Pipeline** | Automated testing on every push via GitHub Actions |
+| **100% Test Coverage**    | Unit tests for all core functionality (JUnit 5 + Mockito)             |
+| **CI/CD Pipeline**        | Automated testing on every push via GitHub Actions                    |
 
 ---
 
 ## 🛠️ Technologies
 
-| Technology | Purpose | Version |
-|-----------|---------|---------|
-| **Java** | Core language | JDK 11+ |
-| **JUnit 5** | Unit testing framework | 5.9.0+ |
-| **Mockito** | Mocking framework | 5.0+ |
-| **Maven** | Build automation | 3.8.0+ |
-| **GitHub Actions** | CI/CD pipeline | Latest |
+| Technology         | Purpose                | Version |
+| ------------------ | ---------------------- | ------- |
+| **Java**           | Core language          | JDK 11+ |
+| **JUnit 5**        | Unit testing framework | 5.9.0+  |
+| **Mockito**        | Mocking framework      | 5.0+    |
+| **Maven**          | Build automation       | 3.8.0+  |
+| **GitHub Actions** | CI/CD pipeline         | Latest  |
 
 ---
 
 ## 📦 Installation
 
 ### Prerequisites
+
 - **Java Development Kit (JDK)**: Version 11 or higher
 - **Maven**: Version 3.8.0 or higher
 - **Git**: For version control
@@ -204,7 +207,7 @@ public interface PalindromeStrategy {
      * @throws IllegalArgumentException if input is null/empty
      */
     boolean check(String input) throws IllegalArgumentException;
-    
+
     /**
      * Returns strategy name for identification
      * @return Strategy name
@@ -215,17 +218,17 @@ public interface PalindromeStrategy {
 
 #### `StackStrategy` (Implementation)
 
-| Method | Signature | Complexity |
-|--------|-----------|-----------|
-| `check(String)` | `boolean check(String input)` | O(n) time, O(n) space |
-| `getStrategyName()` | `String getStrategyName()` | O(1) |
+| Method              | Signature                     | Complexity            |
+| ------------------- | ----------------------------- | --------------------- |
+| `check(String)`     | `boolean check(String input)` | O(n) time, O(n) space |
+| `getStrategyName()` | `String getStrategyName()`    | O(1)                  |
 
 #### `TwoPointerStrategy` (Implementation)
 
-| Method | Signature | Complexity |
-|--------|-----------|-----------|
-| `check(String)` | `boolean check(String input)` | O(n) time, O(1) space |
-| `getStrategyName()` | `String getStrategyName()` | O(1) |
+| Method              | Signature                     | Complexity            |
+| ------------------- | ----------------------------- | --------------------- |
+| `check(String)`     | `boolean check(String input)` | O(n) time, O(1) space |
+| `getStrategyName()` | `String getStrategyName()`    | O(1)                  |
 
 #### `PalindromeValidator` (Utility Class)
 
@@ -233,10 +236,10 @@ public interface PalindromeStrategy {
 public class PalindromeValidator {
     // Removes non-alphanumeric characters and lowercases
     static String sanitize(String input)
-    
+
     // Validates input format
     static boolean isValidInput(String input)
-    
+
     // Gets sanitized string length
     static int getSanitizedLength(String input)
 }
@@ -244,10 +247,10 @@ public class PalindromeValidator {
 
 ### Exception Handling
 
-| Exception | Cause | Recovery |
-|-----------|-------|----------|
+| Exception                  | Cause               | Recovery                |
+| -------------------------- | ------------------- | ----------------------- |
 | `IllegalArgumentException` | Null or empty input | Validate before calling |
-| `EmptyStackException` | Stack underflow | Pre-check input length |
+| `EmptyStackException`      | Stack underflow     | Pre-check input length  |
 
 ---
 
@@ -255,12 +258,12 @@ public class PalindromeValidator {
 
 ### Benchmark Results
 
-| Input | Stack Strategy | Two-Pointer | Performance Gain |
-|-------|-----------------|------------|-----------------|
-| "Level" (5 chars) | 2,450 ns | 1,200 ns | **51% faster** |
-| "Racecar" (7 chars) | 3,100 ns | 1,850 ns | **40% faster** |
-| "A man, a plan, a canal: Panama" (30 chars) | 5,200 ns | 2,800 ns | **46% faster** |
-| "Was it a car or a cat I saw?" (29 chars) | 5,100 ns | 2,900 ns | **43% faster** |
+| Input                                       | Stack Strategy | Two-Pointer | Performance Gain |
+| ------------------------------------------- | -------------- | ----------- | ---------------- |
+| "Level" (5 chars)                           | 2,450 ns       | 1,200 ns    | **51% faster**   |
+| "Racecar" (7 chars)                         | 3,100 ns       | 1,850 ns    | **40% faster**   |
+| "A man, a plan, a canal: Panama" (30 chars) | 5,200 ns       | 2,800 ns    | **46% faster**   |
+| "Was it a car or a cat I saw?" (29 chars)   | 5,100 ns       | 2,900 ns    | **43% faster**   |
 
 ### Key Observations
 
@@ -281,16 +284,19 @@ Two-Pointer:     O(1) - Only uses two index variables
 ## 🧪 Running Tests
 
 ### Run All Tests
+
 ```bash
 mvn test
 ```
 
 ### Run Specific Test Class
+
 ```bash
 mvn test -Dtest=PalindromeCheckerAppTest
 ```
 
 ### Generate Coverage Report
+
 ```bash
 mvn clean test jacoco:report
 # Report available at: target/site/jacoco/index.html
@@ -377,6 +383,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 👨‍💻 Author
 
 **Inbasekaran S**
+
 - Version: 2.0
 - Last Updated: 2026
 
@@ -385,6 +392,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📞 Support & Questions
 
 For questions or issues:
+
 - 📧 **Email**: your.email@example.com
 - 💬 **GitHub Issues**: [Open an issue](https://github.com/yourusername/PalindromeCheckerApp/issues)
 - 📚 **Documentation**: Check [Wiki](https://github.com/yourusername/PalindromeCheckerApp/wiki)

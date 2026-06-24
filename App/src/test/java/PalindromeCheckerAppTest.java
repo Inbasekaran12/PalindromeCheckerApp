@@ -1,11 +1,3 @@
-import strategy.PalindromeStrategy;
-import strategy.StackStrategy;
-import strategy.TwoPointerStrategy;
-import util.PalindromeValidator;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Integration Tests for PalindromeCheckerApp
@@ -33,7 +25,7 @@ class PalindromeCheckerAppTest {
         for (String testCase : testCases) {
             boolean result1 = stackStrategy.check(testCase);
             boolean result2 = twoPointerStrategy.check(testCase);
-            assertEquals(result1, result2, 
+            assertEquals(result1, result2,
                         "Strategies should produce same result for: " + testCase);
         }
     }
@@ -42,14 +34,14 @@ class PalindromeCheckerAppTest {
     @DisplayName("Full workflow: sanitize and check palindrome")
     void testFullWorkflow() {
         String input = "A man, a plan, a canal: Panama";
-        
+
         // Validate
         assertTrue(PalindromeValidator.isValidInput(input));
-        
+
         // Sanitize
         String sanitized = PalindromeValidator.sanitize(input);
         assertEquals("amanaplanacanalpanama", sanitized);
-        
+
         // Check with strategy
         PalindromeStrategy strategy = new TwoPointerStrategy();
         boolean result = strategy.check(sanitized);
@@ -69,7 +61,7 @@ class PalindromeCheckerAppTest {
         for (String palindrome : complexPalindromes) {
             assertTrue(PalindromeValidator.isValidInput(palindrome),
                       "Should be valid: " + palindrome);
-            
+
             String sanitized = PalindromeValidator.sanitize(palindrome);
             assertTrue(new TwoPointerStrategy().check(sanitized),
                       "Should be palindrome: " + palindrome);
@@ -97,12 +89,12 @@ class PalindromeCheckerAppTest {
     @Test
     @DisplayName("Error handling for invalid inputs")
     void testErrorHandling() {
-        assertThrows(IllegalArgumentException.class, 
+        assertThrows(IllegalArgumentException.class,
                     () -> new StackStrategy().check(null));
-        
-        assertThrows(IllegalArgumentException.class, 
+
+        assertThrows(IllegalArgumentException.class,
                     () -> new TwoPointerStrategy().check(null));
-        
+
         assertFalse(PalindromeValidator.isValidInput(null));
         assertFalse(PalindromeValidator.isValidInput(""));
     }
